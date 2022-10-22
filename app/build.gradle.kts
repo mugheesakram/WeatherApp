@@ -76,7 +76,11 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.7")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.google.code.gson:gson:2.9.0")
-    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    // Room DB
+    implementation("androidx.room:room-runtime:2.4.0-alpha03")
+    implementation("androidx.room:room-ktx:2.4.0-alpha03")
+    annotationProcessor("androidx.room:room-compiler:2.4.0-alpha03")
+
     // Testing
     testImplementation("junit:junit:4.13.2")
     testImplementation("io.mockk:mockk:1.12.2")
