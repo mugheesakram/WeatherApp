@@ -2,6 +2,7 @@ package com.test.weatherapp.data.models.weathermodels
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.test.weatherapp.data.client.BaseResponse
 
 @Entity(tableName = "weather_table")
 data class WeatherParent(
@@ -10,8 +11,8 @@ data class WeatherParent(
     val cod: String? = null,
     val list: List<WeatherPerDay>? = null,
     val message: Int? = null,
-    @Transient val favourite: Int? = 0
-) {
+    @Transient var favourite: Int? = 0
+):BaseResponse() {
     @PrimaryKey
     val id: Int? = city?.id
 }

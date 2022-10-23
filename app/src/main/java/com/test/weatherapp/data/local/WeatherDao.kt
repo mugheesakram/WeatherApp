@@ -1,9 +1,6 @@
 package com.test.weatherapp.data.local
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.test.weatherapp.data.models.weathermodels.WeatherParent
 
 @Dao
@@ -16,4 +13,7 @@ interface WeatherDao {
 
     @Query("SELECT * FROM weather_table WHERE favourite = 0 ")
     suspend fun getFavouriteCities(): List<WeatherParent>
+
+    @Update(entity = WeatherParent::class)
+    fun update(obj: WeatherParent)
 }

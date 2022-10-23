@@ -5,6 +5,6 @@ import com.test.weatherapp.data.models.locationmodels.LocationModel
 import com.test.weatherapp.data.models.weathermodels.WeatherParent
 
 interface WeatherApi {
-    suspend fun getWeatherForCity(lat: String, long: String): ApiResponse<WeatherParent>
+    suspend fun getWeatherForCity(lat: Double, long: Double): ApiResponse<WeatherParent>
     suspend fun getCoordinatesForCity(cityName: String): ApiResponse<LocationModel>
 }

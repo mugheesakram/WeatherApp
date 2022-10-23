@@ -5,7 +5,7 @@ import javax.inject.Inject
 
 class WeatherApiImpl @Inject constructor(private val weatherService: WeatherService) :
     BaseRepository(), WeatherApi {
-    override suspend fun getWeatherForCity(lat: String, long: String) = executeSafely {
+    override suspend fun getWeatherForCity(lat: Double, long: Double) = executeSafely {
         weatherService.getWeatherForCity(lat, long, "10")
     }
 

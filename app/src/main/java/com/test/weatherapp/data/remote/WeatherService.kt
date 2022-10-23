@@ -9,7 +9,7 @@ import retrofit2.http.Query
 interface WeatherService {
     @GET("data/2.5/forecast")
     suspend fun getWeatherForCity(
-        @Query("lat") lat: String, @Query("long") long: String, @Query("cnt") cnt: String
+        @Query("lat") lat: Double, @Query("long") long: Double, @Query("cnt") cnt: String
     ): Response<WeatherParent>
 
     @GET("geo/1.0/direct")
