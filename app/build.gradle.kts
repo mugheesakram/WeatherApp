@@ -1,3 +1,4 @@
+import java.util.*
 plugins {
     id("com.android.application")
     id("kotlin-parcelize")
@@ -18,13 +19,46 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
-            )
+        buildTypes {
+            getByName("debug") {
+                isMinifyEnabled = false
+                isDebuggable = true
+            }
+            getByName("release") {
+                isMinifyEnabled = false
+                proguardFiles(
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
+                )
+            }
         }
     }
+
+    flavorDimensions.add("default")
+    productFlavors {
+        val localProperties = File(project.rootDir, "variants.properties")
+        val properties = Properties()
+        if (localProperties.exists()) {
+            localProperties.inputStream().use { properties.load(it) }
+
+            create("dev") {
+                dimension = "default"
+                applicationId = "com.test.weatherapp"
+                manifestPlaceholders["APPLICATION_ID"] = "com.test.weatherapp"
+//                versionNameSuffix = "-${ProductFlavors.STG} -${AppConfig.versionName}"
+                buildConfigField("String", "BASE_URL", properties["BASE_URL_DEV"].toString())
+            }
+            create("prod") {
+                dimension = "default"
+                applicationId = "com.test.weatherapp"
+                manifestPlaceholders["APPLICATION_ID"] = "com.test.weatherapp"
+                buildConfigField("String", "BASE_URL", properties["BASE_URL_PROD"].toString())
+            }
+        } else {
+            System.err.println("Missing variants.properties file.")
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8

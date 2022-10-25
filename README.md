@@ -22,6 +22,7 @@ Here is the tech stack that i have used to in this project:
 - Mockk
 - Junit
 - Testing Extensions
+- Multi flavor / Multiple environments handling.
 
 ## Assumptions
 

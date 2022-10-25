@@ -28,8 +28,7 @@ import com.test.weatherapp.utils.toCelsius
 fun CityWeather(modifier: Modifier = Modifier, weatherParent: WeatherParent) {
     Box {
         Column(
-            modifier = Modifier
-                .fillMaxSize()
+            modifier = modifier
                 .fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {

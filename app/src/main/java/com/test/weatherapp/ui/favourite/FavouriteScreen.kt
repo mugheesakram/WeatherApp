@@ -38,6 +38,7 @@ fun FavouriteScreen(navController: NavHostController, viewModel: FavouriteVM = h
             modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally
         ) {
             if (cityList?.isNotEmpty() == true) LazyColumn(
+                modifier = Modifier.padding(top = 20.dp),
                 verticalArrangement = Arrangement.spacedBy(
                     10.dp
                 )

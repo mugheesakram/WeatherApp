@@ -15,7 +15,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SearchVM @Inject constructor(private val dataRepository: DataRepository) : BaseViewModel() {
-    private val _enteredCityName: MutableLiveData<String> = MutableLiveData("Lahore")
+    private val _enteredCityName: MutableLiveData<String> = MutableLiveData("")
     val enteredCityName: LiveData<String> = _enteredCityName
 
     private val _cityData = MutableLiveData<WeatherParent>()

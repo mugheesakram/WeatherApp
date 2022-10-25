@@ -59,7 +59,7 @@ class RetrofitNetwork @Inject constructor(
         okHttpBuilder.connectTimeout(timeoutConnect.toLong(), TimeUnit.SECONDS)
         okHttpBuilder.readTimeout(timeoutRead.toLong(), TimeUnit.SECONDS)
         val client = okHttpBuilder.build()
-        retrofit = Retrofit.Builder().baseUrl("https://api.openweathermap.org/")
+        retrofit = Retrofit.Builder().baseUrl(BuildConfig.BASE_URL)
             .client(client)
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
             .build()
