@@ -1,6 +1,6 @@
 package com.test.weatherapp.data.repo
 
-import com.test.weatherapp.data.client.ApiResponse
+import com.test.weatherapp.data.remote.client.ApiResponse
 import com.test.weatherapp.data.models.weathermodels.WeatherParent
 
 interface DataRepository {
@@ -11,7 +11,6 @@ interface DataRepository {
 
     suspend fun getCityWeatherWithLatLong(lat: Double, long: Double): ApiResponse<WeatherParent>
 
-    //    suspend fun getCityName(lat: String, long: String): ApiResponse<LocationModel>
     suspend fun addFavouriteCity(weatherParent: WeatherParent)
     suspend fun getFavouriteCities(): List<WeatherParent>
 }

@@ -1,10 +1,10 @@
-package com.test.weatherapp.data.client
+package com.test.weatherapp.data.remote.client
 
 import retrofit2.Response
 import java.net.UnknownHostException
 
 abstract class BaseRepository : IRepository {
-    override suspend fun <T : BaseResponse> executeSafely(call: suspend () -> Response<T>): ApiResponse<T> {
+    override suspend fun <T> executeSafely(call: suspend () -> Response<T>): ApiResponse<T> {
         try {
             val response: Response<T> = call.invoke()
             if (response.isSuccessful) {

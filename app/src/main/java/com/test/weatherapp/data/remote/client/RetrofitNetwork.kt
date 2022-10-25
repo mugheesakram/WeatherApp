@@ -1,4 +1,4 @@
-package com.test.weatherapp.data.client
+package com.test.weatherapp.data.remote.client
 
 import android.content.Context
 import com.google.gson.GsonBuilder

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">WeatherApp</string>
+    <string name="search_city_name">Enter Location Name</string>
+    <string name="retry">Retry</string>
+    <string name="degree_celsius">°C</string>
+    <string name="five_day_three_hour_forecast">5 day / 3 hour forecast data</string>
+    <string name="add_to_favourite">Add to favourite</string>
+    <string name="permission_location_rationale">We need you location to get the coordinates to give your weather forecast of your current location </string>
 </resources>

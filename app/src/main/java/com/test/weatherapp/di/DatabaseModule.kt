@@ -26,8 +26,7 @@ class DatabaseModule {
             appContext,
             AppDB::class.java,
             "WeatherData"
-        ).addMigrations()
-            .build()
+        ).build()
     }
 
 }

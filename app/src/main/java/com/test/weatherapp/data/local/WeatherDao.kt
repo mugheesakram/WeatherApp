@@ -11,7 +11,7 @@ interface WeatherDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertWeatherOfCity(repos: WeatherParent)
 
-    @Query("SELECT * FROM weather_table WHERE favourite = 0 ")
+    @Query("SELECT * FROM weather_table WHERE favourite = 1 ")
     suspend fun getFavouriteCities(): List<WeatherParent>
 
     @Update(entity = WeatherParent::class)

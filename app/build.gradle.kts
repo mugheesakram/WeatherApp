@@ -58,6 +58,7 @@ dependencies {
     // Kotlin
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.0")
+    implementation("androidx.test:core-ktx:1.4.0")
     // Jetpack Compose
     implementation("androidx.compose.ui:ui:1.0.5")
     implementation("androidx.compose.material:material:1.2.1")
@@ -79,8 +80,12 @@ dependencies {
     // Room DB
     implementation("androidx.room:room-runtime:2.4.0-alpha03")
     implementation("androidx.room:room-ktx:2.4.0-alpha03")
-    annotationProcessor("androidx.room:room-compiler:2.4.0-alpha03")
-
+    kapt("androidx.room:room-compiler:2.4.0-alpha03")
+    //Location
+    implementation("com.google.android.gms:play-services-location:21.0.0")
+    // Navigation
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    implementation("androidx.navigation:navigation-compose:2.4.2")
     // Testing
     testImplementation("junit:junit:4.13.2")
     testImplementation("io.mockk:mockk:1.12.2")
@@ -89,4 +94,6 @@ dependencies {
     testImplementation("androidx.test:rules:1.4.0")
     testImplementation("androidx.test:runner:1.4.0")
     testImplementation("androidx.arch.core:core-testing:2.1.0")
+    androidTestImplementation("junit:junit:4.12")
+    implementation("androidx.test.ext:junit-ktx:1.1.3")
 }

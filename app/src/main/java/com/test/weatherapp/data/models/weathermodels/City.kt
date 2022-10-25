@@ -1,5 +1,9 @@
 package com.test.weatherapp.data.models.weathermodels
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class City(
     val coord: Coord? = null,
     val country: String? = null,
@@ -9,4 +13,4 @@ data class City(
     val sunrise: Int? = null,
     val sunset: Int? = null,
     val timezone: Int? = null
-)
+) : Parcelable

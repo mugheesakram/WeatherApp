@@ -1,5 +1,9 @@
 package com.test.weatherapp.data.models.weathermodels
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Main(
     val feels_like: Double? = null,
     val grnd_level: Int? = null,
@@ -10,4 +14,4 @@ data class Main(
     val temp_kf: Double? = null,
     val temp_max: Double? = null,
     val temp_min: Double? = null
-)
+) : Parcelable

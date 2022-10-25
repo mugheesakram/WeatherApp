@@ -17,7 +17,7 @@ import javax.inject.Singleton
 abstract class DataModule {
     @Binds
     @Singleton
-    abstract fun provideDataRepository(dataRepository: DataRepositoryImpl): DataRepository
+    abstract fun provideRemoteRepository(remoteRepository: WeatherApiImpl): WeatherApi
 
     @Binds
     @Singleton
@@ -25,5 +25,5 @@ abstract class DataModule {
 
     @Binds
     @Singleton
-    abstract fun provideRemoteRepository(remoteRepository: WeatherApiImpl): WeatherApi
+    abstract fun provideDataRepository(dataRepository: DataRepositoryImpl): DataRepository
 }

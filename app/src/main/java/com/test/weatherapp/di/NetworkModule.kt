@@ -1,6 +1,6 @@
 package com.test.weatherapp.di
 
-import com.test.weatherapp.data.client.RetrofitNetwork
+import com.test.weatherapp.data.remote.client.RetrofitNetwork
 import com.test.weatherapp.data.remote.WeatherService
 import dagger.Module
 import dagger.Provides
