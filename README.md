@@ -1,6 +1,6 @@
 # Introduction!
 
-Hi! I am Mughees Akram **Mughees Akram**. I am an android developer with around 5 years of
+Hi! I am **Mughees Akram**. I am an android developer with around 5 years of
 experience in Android Development. Here is my take on the assignment that you gave me to showcase my
 skills and knowledge.
 
